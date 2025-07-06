@@ -18,17 +18,17 @@
         ],
     ];
 
-    function filterArray($array, $fn) {
-        $filteredArrays = [];
+    // function filterArray($array, $fn) {
+    //     $filteredArrays = [];
 
-        foreach ($array as $data) {
-            if ($fn($data)) {
-                $filteredArrays[] = $data;
-            }
-        }
+    //     foreach ($array as $data) {
+    //         if ($fn($data)) {
+    //             $filteredArrays[] = $data;
+    //         }
+    //     }
 
-        return $filteredArrays;
-    }
+    //     return $filteredArrays;
+    // }
 
     $filteredPersons = array_filter($persons, function ($person) {
         return $person['birthYear'] >= 2008;
