@@ -28,26 +28,30 @@
             ],
             [
                 'name' => 'Jojo',
-                'birthYear' => 2007,
+                'birthYear' => 2008,
                 'age' => 18
             ],
         ];
 
-        function filterArray($array, $key, $filter) {
-            $filteredArrays = [];
+        // function filterArray($array, $fn) {
+        //     $filteredArrays = [];
 
-            foreach ($array as $data) {
-                if ($data[$key] === $filter) {
-                    $filteredArrays[] = $data;
-                }
-            }
+        //     foreach ($array as $data) {
+        //         if ($fn($data)) {
+        //             $filteredArrays[] = $data;
+        //         }
+        //     }
 
-            return $filteredArrays;
-        }
+        //     return $filteredArrays;
+        // }
+
+        $filteredPersons = array_filter($persons, function ($person) {
+            return $person['birthYear'] >= 2008;
+        });
     ?>
 
     <ul>
-        <?php foreach (filterArray($persons, 'age', 18) as $person) : ?>
+        <?php foreach ($filteredPersons as $person) : ?>
             <li><?= $person['name'] ?> | Births Year : <?= $person['birthYear'] ?> | Age: <?= $person['age'] ?></li>
         <?php endforeach ?>
     </ul>
