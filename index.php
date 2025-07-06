@@ -33,11 +33,11 @@
             ],
         ];
 
-        function filterArray($array, $key, $filter) {
+        function filterArray($array, $key, $value) {
             $filteredArrays = [];
 
             foreach ($array as $data) {
-                if ($data[$key] === $filter) {
+                if ($data[$key] === $value) {
                     $filteredArrays[] = $data;
                 }
             }
