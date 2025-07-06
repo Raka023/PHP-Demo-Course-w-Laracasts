@@ -1,1 +1,1 @@
-# PHP-Demo-Course-w-Laracasts
+# PHP Demo Course w/ Laracasts
