@@ -27,10 +27,11 @@
         ];
     ?>
 
-
-    <?php foreach($peoples as $people) : ?>
-        <li><?= $people['name'] ?> | Age: <?= $people['age'] ?></li>
-    <?php endforeach ?>
+    <ul>
+        <?php foreach($peoples as $people) : ?>
+            <li><?= $people['name'] ?> | Age: <?= $people['age'] ?></li>
+        <?php endforeach ?>
+    <ul>
 
 </body>
 </html>
