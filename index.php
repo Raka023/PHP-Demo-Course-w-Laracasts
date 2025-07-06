@@ -16,17 +16,21 @@
 
     <?php
         $peoples = [
-            'Andy',
-            'Abdullah',
-            'Jojo'
+            [
+                'name' => 'Andy',
+                'age' => 18
+            ],
+            [
+                'name' => 'Abdullah',
+                'age' => 16
+            ]
         ];
     ?>
 
-    <ul>
-        <?php foreach($peoples as $people) : ?>
-            <li><?= $people ?></li>
-        <?php endforeach ?>
-    </ul>
+
+    <?php foreach($peoples as $people) : ?>
+        <li><?= $people['name'] ?> | Age: <?= $people['age'] ?></li>
+    <?php endforeach ?>
 
 </body>
 </html>
