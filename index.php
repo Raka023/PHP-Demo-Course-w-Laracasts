@@ -12,25 +12,45 @@
 </head>
 <body>
 
-    <h1>Peoples</h1>
+    <h1>Persons</h1>
 
     <?php
-        $peoples = [
+        $persons = [
             [
                 'name' => 'Andy',
+                'birthYear' => 2007,
                 'age' => 18
             ],
             [
                 'name' => 'Abdullah',
+                'birthYear' => 2009,
                 'age' => 16
-            ]
+            ],
+            [
+                'name' => 'Jojo',
+                'birthYear' => 2007,
+                'age' => 18
+            ],
         ];
+
+        function filterArray($array, $key, $filter) {
+            $filteredArrays = [];
+
+            foreach ($array as $data) {
+                if ($data[$key] === $filter) {
+                    $filteredArrays[] = $data;
+                }
+            }
+
+            return $filteredArrays;
+        }
     ?>
 
-
-    <?php foreach($peoples as $people) : ?>
-        <li><?= $people['name'] ?> | Age: <?= $people['age'] ?></li>
-    <?php endforeach ?>
+    <ul>
+        <?php foreach (filterArray($persons, 'age', 18) as $person) : ?>
+            <li><?= $person['name'] ?> | Births Year : <?= $person['birthYear'] ?> | Age: <?= $person['age'] ?></li>
+        <?php endforeach ?>
+    </ul>
 
 </body>
 </html>
