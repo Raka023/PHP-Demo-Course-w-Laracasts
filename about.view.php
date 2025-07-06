@@ -74,7 +74,7 @@
             <!-- Mobile menu, show/hide based on menu state. -->
             <div class="md:hidden hidden border-t border-zinc-800 bg-zinc-950" id="mobile-menu">
                 <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-                    <a href="/" class="block rounded-md bg-zinc-900 px-3 py-2 text-base font-medium text-zinc-100 border border-zinc-800 transition-colors" aria-current="page">Home</a>
+                    <a href="/" class="block rounded-md bg-zinc-900 px-3 py-2 text-base font-medium text-zinc-100 border border-zinc-800 transition-colors transition-colors" aria-current="page">Home</a>
                     <a href="/about" class="block rounded-md px-3 py-2 text-base font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors">About</a>
                     <a href="/contact" class="block rounded-md px-3 py-2 text-base font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors">Contact</a>
                 </div>
@@ -100,8 +100,8 @@
 
         <header class="border-b border-zinc-800 bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/75">
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                <h1 class="text-3xl font-bold tracking-tight text-zinc-100">Home</h1>
-                <p class="mt-2 text-sm text-zinc-400">Welcome back.</p>
+                <h1 class="text-3xl font-bold tracking-tight text-zinc-100">About Us</h1>
+                <p class="mt-2 text-sm text-zinc-400">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
         </header>
 
