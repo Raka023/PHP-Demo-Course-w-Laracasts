@@ -12,10 +12,10 @@
 </head>
 <body>
 
-    <h1>Peoples</h1>
+    <h1>Persons</h1>
 
     <?php
-        $peoples = [
+        $persons = [
             [
                 'name' => 'Andy',
                 'age' => 18
@@ -28,8 +28,8 @@
     ?>
 
     <ul>
-        <?php foreach($peoples as $people) : ?>
-            <li><?= $people['name'] ?> | Age: <?= $people['age'] ?></li>
+        <?php foreach($persons as $person) : ?>
+            <li><?= $person['name'] ?> | Age: <?= $person['age'] ?></li>
         <?php endforeach ?>
     <ul>
 
