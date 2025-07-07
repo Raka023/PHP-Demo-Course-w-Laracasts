@@ -7,7 +7,7 @@ function dd($value) {
     die;
 }
 
-function navlinks($url, $style) {
+function navlinks($url, $style = 'desktop') {
     if ($style === 'desktop') {
         if ($_SERVER['REQUEST_URI'] === $url) {
             return 'class="rounded-md bg-zinc-900 px-3 py-2 text-sm font-medium text-zinc-100 border border-zinc-800 transition-colors" aria-current="page"';
