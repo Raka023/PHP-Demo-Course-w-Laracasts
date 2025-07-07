@@ -63,8 +63,8 @@
     <div class="md:hidden hidden border-t border-zinc-800 bg-zinc-950" id="mobile-menu">
         <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
             <a href="/" <?= navlinks('/', 'mobile') ?> >Home</a>
-            <a href="/about" <?= navlinks('/about.php', 'mobile') ?> >About</a>
-            <a href="/contact" <?= navlinks('/contact.php', 'mobile') ?> >Contact</a>
+            <a href="/about.php" <?= navlinks('/about.php', 'mobile') ?> >About</a>
+            <a href="/contact.php" <?= navlinks('/contact.php', 'mobile') ?> >Contact</a>
         </div>
         <div class="border-t border-zinc-800 pt-4 pb-3">
             <!-- Profile icon -->
