@@ -1,22 +1,15 @@
 <?php
 
 require 'functions.php';
+require 'Database.php'; 
 // require 'router.php';
 
-$dsn = 'mysql:host=localhost;port=3306;dbname=myapp;charset=utf8mb4';
-$username = 'root';
-$password = '';
-$options = [];
+$db = new Database();
 
-$conn = new PDO($dsn, $username, $password);
+$posts = $db->query("SELECT * FROM posts WHERE id = 1")->fetch(PDO::FETCH_ASSOC);
 
-$stmt = $conn->prepare("SELECT * FROM posts");
-$stmt->execute();
+dd($posts);
 
-$posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// dd($posts);
-
-foreach ($posts as $post) {
-    echo "<li>{$post['title']}</li>";
-}
+// foreach ($posts as $post) {
+//     echo "<li>{$post['title']}</li>";
+// }
