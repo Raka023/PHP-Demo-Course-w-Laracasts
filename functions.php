@@ -24,3 +24,9 @@ function navlinks($url, $style = 'desktop') {
         }
     }
 }
+
+function authorize($condition, $status = Response::FORBIDDEN) {
+    if (! $condition) {
+        abort($status);
+    }
+}

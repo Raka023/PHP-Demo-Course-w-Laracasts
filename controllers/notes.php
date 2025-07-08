@@ -7,6 +7,6 @@ $heading = 'Notes';
 $description = "Have something's in mind?";
 
 $currentUserId = 1;
-$notes = $db->query("SELECT * FROM notes WHERE user_id = ?", [$currentUserId])->fetchAll();
+$notes = $db->query("SELECT * FROM notes WHERE user_id = ?", [$currentUserId])->get();
 
 require 'views/notes.view.php';
