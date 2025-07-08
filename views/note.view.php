@@ -6,7 +6,7 @@
 
     <main class="bg-black">
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <div class="flex flex-col h-100">
+            <div class="flex flex-col h-100 relative">
                 <div class="rounded-lg border border-zinc-800 bg-zinc-950 p-8 shadow-lg w-full flex flex-col flex-grow h-full">
                     <div class="mb-4">
                         <a href="/notes" class="inline-flex items-center text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors">
@@ -14,7 +14,7 @@
                             Back to Notes
                         </a>
                     </div>
-                    <h2 class="text-2xl font-bold text-zinc-100 mb-4">Note</h2>
+                    <h2 class="text-xl font-semibold text-zinc-100 mb-4">Note</h2>
                     <div class="w-full rounded-lg border border-zinc-800 bg-zinc-900/50 p-6 flex-1 flex">
                         <p class="text-zinc-100 text-base"> <?= htmlspecialchars($note['body']) ?> </p>
                     </div>

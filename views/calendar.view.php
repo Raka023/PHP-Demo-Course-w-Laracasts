@@ -69,7 +69,7 @@
             <div class="rounded-lg border border-zinc-800 bg-zinc-950 p-6">
                 <div class="flex items-center justify-between mb-6">
                     <h2 class="text-xl font-semibold text-zinc-100">Recent Activity</h2>
-                    <button class="rounded-md bg-zinc-900 px-3 py-2 text-sm font-medium text-zinc-100 border border-zinc-800 hover:bg-zinc-800 transition-colors">
+                    <button class="rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-zinc-100 border border-zinc-800 hover:bg-zinc-800 transition-colors">
                         View All
                     </button>
                 </div>

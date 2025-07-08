@@ -1,14 +1,6 @@
 <?php
 
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-
-$routes = [
-    '/' => 'controllers/home.php',
-    '/notes' => 'controllers/notes.php',
-    '/notes/note' => 'controllers/note.php',
-    '/todos' => 'controllers/todos.php',
-    '/calendar' => 'controllers/calendar.php'
-];
+$routes = require 'routes.php';
 
 function routeToContoller($uri, $routes) {
     if (array_key_exists($uri, $routes)) {
@@ -23,5 +15,7 @@ function abort($code) {
     require 'views/errors.view.php';
     die;
 }
+
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 routeToContoller($uri, $routes);
