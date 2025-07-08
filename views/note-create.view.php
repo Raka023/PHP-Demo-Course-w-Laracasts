@@ -8,10 +8,10 @@
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <div class="rounded-lg border border-zinc-800 bg-zinc-950 p-8 relative">
                 <h2 class="text-xl font-semibold text-zinc-100 mb-6">Create a Note</h2>
-                <form action="/notes/create" method="POST" class="space-y-6">
+                <form method="POST" class="space-y-6">
                     <div>
                         <label for="body" class="block text-md font-medium text-zinc-200 mb-2">Note</label>
-                        <textarea id="body" name="body" placeholder="Type your note..." rows="6" required class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-6 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500 resize-none"></textarea>
+                        <textarea id="body" name="body" placeholder="Here's an idea for a note..." rows="6" required class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-6 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500 resize-none"></textarea>
                     </div>
                     <div class="flex items-center justify-end space-x-3">
                         <a href="/notes" class="inline-flex items-center rounded-md border border-zinc-800 bg-zinc-900 px-4 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 focus:ring-offset-black">Cancel</a>
