@@ -6,7 +6,7 @@ $db = new Database($config['database']);
 $heading = 'Notes';
 $description = "Have something's in mind?";
 
-$userId = 1;
-$notes = $db->query("SELECT * FROM notes WHERE user_id = ?", [$userId])->fetchAll();
+$currentUserId = 1;
+$notes = $db->query("SELECT * FROM notes WHERE user_id = ?", [$currentUserId])->fetchAll();
 
 require 'views/notes.view.php';
