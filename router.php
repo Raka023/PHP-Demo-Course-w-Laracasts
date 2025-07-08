@@ -4,8 +4,9 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 $routes = [
     '/' => 'controllers/home.php',
-    '/about' => 'controllers/about.php',
-    '/contact' => 'controllers/contact.php'
+    '/notes' => 'controllers/notes.php',
+    '/todos' => 'controllers/todos.php',
+    '/calendar' => 'controllers/calendar.php'
 ];
 
 function routeToContoller($uri, $routes) {

@@ -10,8 +10,9 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="/" <?= navlinks('/') ?> >Home</a>
-                        <a href="/about" <?= navlinks('/about') ?> >About</a>
-                        <a href="/contact" <?= navlinks('/contact') ?> >Contact</a>
+                        <a href="/notes" <?= navlinks('/notes') ?> >Notes</a>
+                        <a href="/todos" <?= navlinks('/todos') ?> >Todos</a>
+                        <a href="/calendar" <?= navlinks('/calendar') ?> >Calendar</a>
                     </div>
                 </div>
             </div>
@@ -63,8 +64,9 @@
     <div class="md:hidden hidden border-t border-zinc-800 bg-zinc-950" id="mobile-menu">
         <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
             <a href="/" <?= navlinks('/', 'mobile') ?> >Home</a>
-            <a href="/about" <?= navlinks('/about', 'mobile') ?> >About</a>
-            <a href="/contact" <?= navlinks('/contact', 'mobile') ?> >Contact</a>
+            <a href="/notes" <?= navlinks('/notes', 'mobile') ?> >Notes</a>
+            <a href="/todos" <?= navlinks('/todos', 'mobile') ?> >Todos</a>
+            <a href="/calendar" <?= navlinks('/calendar', 'mobile') ?> >Calendar</a>
         </div>
         <div class="border-t border-zinc-800 pt-4 pb-3">
             <!-- Profile icon -->
