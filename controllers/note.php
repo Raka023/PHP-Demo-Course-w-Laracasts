@@ -7,7 +7,9 @@ $heading = 'Notes';
 $description = "Have something's in mind?";
 
 $currentUserId = 1;
-$note = $db->query("SELECT * FROM notes WHERE id = ?", [$_GET['id']])->findOrFail();
+$note = $db->query("SELECT * FROM notes WHERE id = :id", [
+    'id' => $_GET['id']
+])->findOrFail();
 
 authorize($note['user_id'] === $currentUserId);
 
