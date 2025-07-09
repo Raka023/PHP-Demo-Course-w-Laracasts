@@ -7,6 +7,16 @@ function dd($value) {
     die;
 }
 
+function base_path($path) {
+    return __DIR__ . '/../' . $path;
+}
+
+function view($path, $attributes = []) {
+    extract($attributes);
+
+    require base_path("/views/{$path}");
+}
+
 function navlinks($url, $style = 'desktop') {
     if ($style === 'desktop') {
         if ($_SERVER['REQUEST_URI'] === $url) {
