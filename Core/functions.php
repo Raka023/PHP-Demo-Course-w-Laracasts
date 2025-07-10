@@ -19,6 +19,23 @@ function view($path, $attributes = []) {
     require base_path("/views/{$path}");
 }
 
+function abort($code){
+    http_response_code($code);
+    require base_path('views/errors.view.php');
+    die;
+}
+
+function authorize($condition, $status = Response::FORBIDDEN) {
+    if (! $condition) {
+        abort($status);
+    }
+}
+
+function redirect($url) {
+    header("Location: {$url}");
+    exit;
+}
+
 function navlinks($url, $style = 'desktop') {
     if ($style === 'desktop') {
         if ($_SERVER['REQUEST_URI'] === $url) {
@@ -35,15 +52,4 @@ function navlinks($url, $style = 'desktop') {
             return 'class="block rounded-md px-3 py-2 text-base font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors"';
         }
     }
-}
-
-function authorize($condition, $status = Response::FORBIDDEN) {
-    if (! $condition) {
-        abort($status);
-    }
-}
-
-function redirect($url) {
-    header("Location: {$url}");
-    exit;
 }

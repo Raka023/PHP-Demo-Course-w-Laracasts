@@ -7,7 +7,7 @@ $config = require base_path('config.php');
 $db = new Database($config['database']);
 
 $errors = [];
-$currentUserId = 1;
+$currentUserId = 2;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (Validator::string($_POST['body'], 1, 1000)) {

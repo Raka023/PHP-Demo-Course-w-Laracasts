@@ -19,6 +19,7 @@
                                 Edit
                             </a>
                             <form method="POST" onsubmit="return confirm('Are you sure you want to delete this note?');">
+                                <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="id" value="<?= $note['id'] ?>">
                                 <button type="submit" class="inline-flex items-center rounded-md border border-red-800 bg-red-950 px-3 py-1.5 text-sm font-medium text-red-300 cursor-pointer hover:text-white hover:bg-red-800 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black">
                                     <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
