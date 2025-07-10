@@ -42,3 +42,8 @@ function authorize($condition, $status = Response::FORBIDDEN) {
         abort($status);
     }
 }
+
+function redirect($url) {
+    header("Location: {$url}");
+    exit;
+}
