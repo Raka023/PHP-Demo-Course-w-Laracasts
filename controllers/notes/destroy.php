@@ -8,13 +8,13 @@ $db = new Database($config['database']);
 $currentUserId = 2;
 
 $note = $db->query("SELECT * FROM notes WHERE id = :id", [
-    'id' => $_GET['id']
+    'id' => $_POST['id']
 ])->findOrFail();
 
 authorize($note['user_id'] === $currentUserId);
 
-view('notes/show.view.php', [
-    'heading' => 'Notes',
-    'description' => "Have something's in mind?",
-    'note' => $note
+$db->query("DELETE FROM notes WHERE id = :id", [
+    'id' => $_POST['id']
 ]);
+
+redirect('/notes');

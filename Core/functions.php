@@ -15,8 +15,8 @@ function base_path($path) {
 
 function view($path, $attributes = []) {
     extract($attributes);
-
     require base_path("/views/{$path}");
+    die;
 }
 
 function abort($code){
@@ -33,7 +33,7 @@ function authorize($condition, $status = Response::FORBIDDEN) {
 
 function redirect($url) {
     header("Location: {$url}");
-    exit;
+    die;
 }
 
 function navlinks($url, $style = 'desktop') {
