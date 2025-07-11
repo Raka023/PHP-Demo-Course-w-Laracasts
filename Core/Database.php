@@ -5,8 +5,8 @@ namespace Core;
 use PDO;
 
 class Database {
-    public $connection;
-    public $stmt;
+    private $connection;
+    private $stmt;
 
     public function __construct($config, $username = 'root', $password = '') {
         $dsn = 'mysql:' . http_build_query($config, '', ';');

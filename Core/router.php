@@ -41,12 +41,6 @@ class Router {
             }
         }
 
-        $this->abort(Response::NOT_FOUND);
-    }
-
-    private static function abort($code) {
-        http_response_code($code);
-        require base_path('views/errors.view.php');
-        die;
+        abort(Response::NOT_FOUND);
     }
 }
