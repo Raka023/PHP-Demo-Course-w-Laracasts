@@ -11,7 +11,7 @@
                 <form method="POST" class="space-y-6">
                     <div>
                         <label for="body" class="block text-md font-medium text-zinc-200 mb-2">Note</label>
-                        <textarea id="body" name="body" placeholder="Here's an idea for a note..." rows="6" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-6 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500 resize-none"><?= empty($errors) ? $note['body'] : $body ?></textarea>
+                        <textarea id="body" name="body" placeholder="Here's an idea for a note..." rows="6" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-6 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500 resize-none"><?= $_POST['body'] ?? $note['body'] ?></textarea>
                     </div>
                     <div class="flex items-center justify-between space-x-3">
                         <?php if (isset($errors['body'])) : ?>

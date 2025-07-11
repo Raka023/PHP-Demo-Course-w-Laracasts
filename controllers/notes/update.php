@@ -20,12 +20,11 @@ if (Validator::string($_POST['body'], 1, 1000)) {
     $errors['body'] = 'A body of no more than 1,000 characters is required.';
 }
 
-if (count($errors)) {
+if (! empty($errors)) {
     return view('notes/edit.view.php', [
         'heading' => 'Notes',
         'description' => "Have something's in mind?",
         'note' => $note,
-        'body' => $_POST['body'],
         'errors' => $errors
     ]);
 }
