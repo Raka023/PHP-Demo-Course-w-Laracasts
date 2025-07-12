@@ -5,7 +5,7 @@ use Core\Database;
 
 $db = App::resolve(Database::class);
 
-$currentUserId = 2;
+require 'userId.php';
 
 $notes = $db->query("SELECT * FROM notes WHERE user_id = :userId", [
     'userId' => $currentUserId

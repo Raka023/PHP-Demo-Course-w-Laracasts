@@ -10,11 +10,12 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="/" <?= navlinks('/') ?>>Home</a>
-                        <?php if (isset($_SESSION['user'])) : ?>
-                            <a href="/notes" <?= navlinks('/notes') ?>>Notes</a>
-                            <a href="/todos" <?= navlinks('/todos') ?>>Todos</a>
-                            <a href="/calendar" <?= navlinks('/calendar') ?>>Calendar</a>
-                        <?php endif ?>
+                            <?php if (isset($_SESSION['user'])) : ?>
+                                <a href="/notes" <?= navlinks('/notes') ?>>Notes</a>
+                                <a href="/todos" <?= navlinks('/todos') ?>>Todos</a>
+                                <a href="/calendar" <?= navlinks('/calendar') ?>>Calendar</a>
+                            <?php endif ?>
+                        <a href="/support" <?= navlinks('/support') ?>>Support</a>
                     </div>
                 </div>
             </div>
@@ -81,6 +82,7 @@
                 <a href="/todos" <?= navlinks('/todos', 'mobile') ?>>Todos</a>
                 <a href="/calendar" <?= navlinks('/calendar', 'mobile') ?>>Calendar</a>
             <?php endif ?>
+            <a href="/support" <?= navlinks('/support', 'mobile') ?>>Support</a>
         </div>
         <?php if (isset($_SESSION['user'])) : ?>
             <div class="border-t border-zinc-800 pt-4 pb-3">

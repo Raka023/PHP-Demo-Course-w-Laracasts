@@ -55,8 +55,16 @@ function logout() {
 }
 
 function navlinks($url, $style = 'desktop') {
+    $current = $_SERVER['REQUEST_URI'];
+
+    if ($url === '/' && $current !== '/') {
+        $isActive = false;
+    } else {
+        $isActive = strpos($current, $url) === 0;
+    }
+
     if ($style === 'desktop') {
-        if ($_SERVER['REQUEST_URI'] === $url) {
+        if ($isActive) {
             return 'class="rounded-md bg-zinc-900 px-3 py-2 text-sm font-medium text-zinc-100 border border-zinc-800 transition-colors" aria-current="page"';
         } else {
             return 'class="rounded-md px-3 py-2 text-sm font-medium text-zinc-300 hover:text-zinc-100 hover:bg-zinc-800 transition-colors"';
@@ -64,7 +72,7 @@ function navlinks($url, $style = 'desktop') {
     }
 
     if ($style === 'mobile') {
-        if ($_SERVER['REQUEST_URI'] === $url) {
+        if ($isActive) {
             return 'class="block rounded-md bg-zinc-900 px-3 py-2 text-base font-medium text-zinc-100 border border-zinc-800 transition-colors" aria-current="page"';
         } else {
             return 'class="block rounded-md px-3 py-2 text-base font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors"';

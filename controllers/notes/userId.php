@@ -1,0 +1,3 @@
+<?php
+
+$currentUserId = 5;

@@ -6,7 +6,7 @@ use Core\Validator;
 
 $db = App::resolve(Database::class);
 
-$currentUserId = 2;
+require 'userId.php';
 
 $note = $db->query("SELECT * FROM notes WHERE id = :id", [
     'id' => $_POST['id']

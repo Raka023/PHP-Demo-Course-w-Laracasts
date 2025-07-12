@@ -6,7 +6,8 @@ use Core\Validator;
 
 $db = App::resolve(Database::class);
 
-$currentUserId = 2;
+require 'userId.php';
+
 $errors = [];
 
 if (Validator::string($_POST['body'], 1, 1000)) {

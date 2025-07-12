@@ -3,6 +3,10 @@
 // Home
 $router->get('/', 'controllers/home.php');
 
+// Support
+$router->get('/support', 'controllers/support.php');
+$router->post('/support', 'controllers/support.php');
+
 // Authentication
 $router->get('/register', 'controllers/registration/create.php')->only('guest');
 $router->post('/register', 'controllers/registration/store.php')->only('guest');
