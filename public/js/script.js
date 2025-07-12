@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
             item.addEventListener('click', function(e) {
                 e.preventDefault();
                 console.log('Clicked:', this.textContent);
-                // Add your navigation logic here
-
+                // Navigate to the href of the clicked item
+                window.location.href = this.getAttribute('href');
                 // Close dropdown after clicking
                 userMenuButton.setAttribute('aria-expanded', 'false');
                 userMenuDropdown.classList.add('hidden');
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Toggle confirm password visibility
+    // Toggle confirm password visibility for Register
     var toggle = document.getElementById('toggle-confirm-password');
     if (toggle) {
         var confirmInput = document.getElementById('password_confirmation');
@@ -90,4 +90,13 @@ document.addEventListener('DOMContentLoaded', function() {
             confirmInput.type = this.checked ? 'text' : 'password';
         });
     }
+
+    // Toggle confirm password visibility for Login
+        var toggle = document.getElementById('toggle-password');
+        if (toggle) {
+            var confirmInput = document.getElementById('password');
+            toggle.addEventListener('change', function() {
+                confirmInput.type = this.checked ? 'text' : 'password';
+            });
+        }
 });

@@ -9,10 +9,12 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="/" <?= navlinks('/') ?> >Home</a>
-                        <a href="/notes" <?= navlinks('/notes') ?> >Notes</a>
-                        <a href="/todos" <?= navlinks('/todos') ?> >Todos</a>
-                        <a href="/calendar" <?= navlinks('/calendar') ?> >Calendar</a>
+                        <a href="/" <?= navlinks('/') ?>>Home</a>
+                        <?php if (isset($_SESSION['user'])) : ?>
+                            <a href="/notes" <?= navlinks('/notes') ?>>Notes</a>
+                            <a href="/todos" <?= navlinks('/todos') ?>>Todos</a>
+                            <a href="/calendar" <?= navlinks('/calendar') ?>>Calendar</a>
+                        <?php endif ?>
                     </div>
                 </div>
             </div>
@@ -38,7 +40,10 @@
                             <div class="absolute right-0 z-50 mt-2 w-48 origin-top-right rounded-md bg-zinc-900 py-1 shadow-lg ring-1 ring-zinc-800 focus:outline-none hidden border border-zinc-800" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1" id="user-menu-dropdown">
                                 <a href="#" class="block px-4 py-2 text-sm text-zinc-200 hover:bg-zinc-800 transition-colors" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
                                 <a href="#" class="block px-4 py-2 text-sm text-zinc-200 hover:bg-zinc-800 transition-colors" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-zinc-200 hover:bg-zinc-800 transition-colors" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                                <form action="/logout" method="POST">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="w-full text-left block px-4 py-2 text-sm text-zinc-200 cursor-pointer hover:bg-zinc-800 transition-colors" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign Out</button>
+                                </form>
                             </div>
                         <?php else : ?>
                             <div class="flex gap-2">
@@ -70,10 +75,12 @@
     <!-- Mobile menu, show/hide based on menu state. -->
     <div class="md:hidden hidden border-t border-zinc-800 bg-zinc-950" id="mobile-menu">
         <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-            <a href="/" <?= navlinks('/', 'mobile') ?> >Home</a>
-            <a href="/notes" <?= navlinks('/notes', 'mobile') ?> >Notes</a>
-            <a href="/todos" <?= navlinks('/todos', 'mobile') ?> >Todos</a>
-            <a href="/calendar" <?= navlinks('/calendar', 'mobile') ?> >Calendar</a>
+            <a href="/" <?= navlinks('/', 'mobile') ?>>Home</a>
+            <?php if (isset($_SESSION['user'])) : ?>
+                <a href="/notes" <?= navlinks('/notes', 'mobile') ?>>Notes</a>
+                <a href="/todos" <?= navlinks('/todos', 'mobile') ?>>Todos</a>
+                <a href="/calendar" <?= navlinks('/calendar', 'mobile') ?>>Calendar</a>
+            <?php endif ?>
         </div>
         <?php if (isset($_SESSION['user'])) : ?>
             <div class="border-t border-zinc-800 pt-4 pb-3">
@@ -92,9 +99,10 @@
                 <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors">Your Profile</a>
                 <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors">Notifications</a>
                 <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors">Settings</a>
-                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors">Sign Out</a>
-                <a href="/login" class="block rounded-md border border-zinc-800 px-3 py-2 text-base font-medium text-zinc-100 hover:bg-zinc-900/70 transition-colors mt-2">Login</a>
-                <a href="/register" class="block rounded-md bg-zinc-100 px-3 py-2 text-base font-semibold text-zinc-900 border border-zinc-800 hover:bg-zinc-300 transition-colors mt-2">Register</a>
+                <form action="/logout" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="block w-full text-left rounded-md px-3 py-2 text-base font-medium text-zinc-400 cursor-pointer hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors">Sign Out</button>
+                </form>
             </div>
         <?php else : ?>
             <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">

@@ -36,6 +36,24 @@ function redirect($url) {
     die;
 }
 
+function login($user) {
+    $_SESSION['user'] = [
+        'name' => $user['name']
+    ];
+
+    session_regenerate_id(true);
+}
+
+function logout() {
+    $_SESSION = [];
+    $params = session_get_cookie_params();
+
+    session_destroy();
+    session_unset();
+
+    setcookie('PHPSESSID', '', time() - 3600, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+}
+
 function navlinks($url, $style = 'desktop') {
     if ($style === 'desktop') {
         if ($_SERVER['REQUEST_URI'] === $url) {

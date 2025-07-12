@@ -4,6 +4,8 @@ use Core\App;
 use Core\Database;
 use Core\Validator;
 
+$db = App::resolve(Database::class);
+
 $name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -37,8 +39,6 @@ if (! empty($errors)) {
     ]);
 }
 
-$db = App::resolve(Database::class);
-
 $user = $db->query("SELECT * FROM users WHERE email = :email", [
     'email' => $email
 ])->find();
@@ -57,9 +57,8 @@ $db->query("INSERT INTO users (name, email, password) VALUES (:name, :email, :pa
     'password' => password_hash($password, PASSWORD_DEFAULT)
 ]);
 
-$_SESSION['user'] = [
-    'name' => $name,
-    'email' => $email
-];
+login([
+    'name' => $name
+]);
 
 redirect('/');

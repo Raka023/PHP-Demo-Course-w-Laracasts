@@ -1,5 +1,3 @@
 <?php
 
-view('registration/create.view.php', [
-    'erroes' => []
-]);
+view('registration/create.view.php');
