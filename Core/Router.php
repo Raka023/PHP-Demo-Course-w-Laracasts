@@ -2,8 +2,6 @@
 
 namespace Core;
 
-use Core\Middleware\Auth;
-use Core\Middleware\Guest;
 use Core\Middleware\Middleware;
 
 class Router {
@@ -52,7 +50,6 @@ class Router {
                 Middleware::resolve($route['middleware']);
 
                 return require base_path("Http/controllers/{$route['controller']}");
-                die;
             }
         }
 

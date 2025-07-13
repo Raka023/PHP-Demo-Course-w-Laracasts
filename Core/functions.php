@@ -1,6 +1,7 @@
 <?php
 
 use Core\Response;
+use Core\Session;
 
 function dd($value) {
     echo '<pre>';
@@ -16,7 +17,6 @@ function base_path($path) {
 function view($path, $attributes = []) {
     extract($attributes);
     require base_path("/views/{$path}");
-    die;
 }
 
 function abort($code){
@@ -38,6 +38,7 @@ function redirect($url) {
 
 function login($user) {
     $_SESSION['user'] = [
+        'id' => $user['id'],
         'name' => $user['name']
     ];
 
@@ -45,13 +46,7 @@ function login($user) {
 }
 
 function logout() {
-    $_SESSION = [];
-    $params = session_get_cookie_params();
-
-    session_destroy();
-    session_unset();
-
-    setcookie('PHPSESSID', '', time() - 3600, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+    Session::destroy();
 }
 
 function navlinks($url, $style = 'desktop') {

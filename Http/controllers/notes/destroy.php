@@ -5,7 +5,7 @@ use Core\Database;
 
 $db = App::resolve(Database::class);
 
-require 'userId.php';
+$currentUserId = require 'userId.php';
 
 $note = $db->query("SELECT * FROM notes WHERE id = :id", [
     'id' => $_POST['id']

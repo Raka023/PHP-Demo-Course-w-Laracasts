@@ -6,7 +6,7 @@ use Core\Validator;
 
 $db = App::resolve(Database::class);
 
-require 'userId.php';
+$currentUserId = require 'userId.php';
 
 $errors = [];
 

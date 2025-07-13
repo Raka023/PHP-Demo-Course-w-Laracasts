@@ -10,7 +10,7 @@
             <form action="/login" method="POST" class="space-y-6" novalidate>
                 <div>
                     <!-- <label for="email" class="block text-sm font-medium text-zinc-200 mb-2">Email</label> -->
-                    <input id="email" name="email" type="email" placeholder="Email" value="<?= $_POST['email'] ?? '' ?>" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-3 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500" />
+                    <input id="email" name="email" type="email" placeholder="Email" value="<?= $old['email'] ?? '' ?>" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-3 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500" />
                     <?php if (isset($errors['email'])) : ?>
                         <div class="rounded-md border border-red-800 bg-red-950/80 p-2 text-red-300 text-sm mt-2">
                             <?= $errors['email'] ?>
@@ -19,7 +19,7 @@
                 </div>
                 <div>
                     <!-- <label for="password" class="block text-sm font-medium text-zinc-200 mb-2">Password</label> -->
-                    <input id="password" name="password" type="password" placeholder="Password" value="<?= $_POST['password'] ?? '' ?>" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-3 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500" />
+                    <input id="password" name="password" type="password" placeholder="Password" value="<?= $old['password'] ?? '' ?>" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-3 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500" />
                     <?php if (isset($errors['password'])) : ?>
                         <div class="rounded-md border border-red-800 bg-red-950/80 p-2 text-red-300 text-sm mt-2">
                             <?= $errors['password'] ?>

@@ -1,3 +1,3 @@
 <?php
 
-$currentUserId = 5;
+return $_SESSION['user']['id'];

@@ -58,6 +58,7 @@ $db->query("INSERT INTO users (name, email, password) VALUES (:name, :email, :pa
 ]);
 
 login([
+    'id' => $user['id'],
     'name' => $name
 ]);
 

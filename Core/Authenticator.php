@@ -12,6 +12,7 @@ class Authenticator
         if ($user) {
             if (password_verify($password, $user['password'])) {
                 login([
+                    'id' => $user['id'],
                     'name' => $user['name']
                 ]);
 
