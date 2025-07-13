@@ -1,0 +1,16 @@
+{
+    "name": "rakap/phpdemo",
+    "authors": [
+        {
+            "name": "Raka",
+            "email": "143157921+Raka023@users.noreply.github.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4" : {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}
