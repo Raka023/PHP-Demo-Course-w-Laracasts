@@ -2,26 +2,18 @@
 
 use Core\App;
 use Core\Database;
-use Core\Validator;
+use Http\Forms\LoginForm;
 
 $db = App::resolve(Database::class);
 
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$errors = [];
+$form = new LoginForm();
 
-if (Validator::email($email)) {
-    $errors['email'] = 'Please enter a valid email address';
-}
-
-if (Validator::string($password, 1, 255)) {
-    $errors['password'] = 'Please enter a Password';
-}
-
-if (! empty($errors)) {
+if ($form->validate($email, $password)) {
     return view('session/create.view.php', [
-        'errors' => $errors
+        'errors' => $form->errors()
     ]);
 }
 
