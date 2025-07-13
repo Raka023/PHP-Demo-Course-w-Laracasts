@@ -55,4 +55,8 @@ class Router {
 
         abort(Response::NOT_FOUND);
     }
+
+    public function previousUrl() {
+        return $_SERVER['HTTP_REFERER'];
+    }
 }
