@@ -36,6 +36,10 @@ function redirect($url) {
     die;
 }
 
+function old($key, $default = null) {
+    return Session::get('old')[$key] ?? $default;
+}
+
 function login($user) {
     $_SESSION['user'] = [
         'id' => $user['id'],
