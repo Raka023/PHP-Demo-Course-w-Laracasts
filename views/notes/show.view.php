@@ -4,7 +4,7 @@
 
 <?php require base_path('views/partials/banner.php') ?>
 
-<main class="bg-black">
+<main class="bg-black min-h-screen">
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <div class="rounded-lg border border-zinc-800 bg-zinc-950 p-8 shadow-lg w-full flex flex-col">
             <div class="flex items-center justify-between mb-4">

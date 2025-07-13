@@ -31,6 +31,10 @@ function authorize($condition, $status = Response::FORBIDDEN) {
     }
 }
 
+function getUser($key) {
+    return $_SESSION['user'][$key];
+}
+
 function redirect($url) {
     header("Location: {$url}");
     die;

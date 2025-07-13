@@ -50,7 +50,7 @@
                             </div>
                         <?php else : ?>
                             <div class="flex gap-2">
-                                <a href="/login" class="inline-flex items-center rounded-md border border-zinc-800 bg-zinc-900 px-4 py-2 text-sm font-medium text-zinc-100 hover:bg-zinc-800/70 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 focus:ring-offset-black">Login</a>
+                                <a href="/login" class="inline-flex items-center rounded-md border border-zinc-800 bg-zinc-900 px-4 py-2 text-sm font-semibold text-zinc-100 hover:bg-zinc-800/70 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 focus:ring-offset-black">Login</a>
                                 <a href="/register" class="inline-flex items-center rounded-md bg-zinc-100 px-4 py-2 text-sm font-semibold text-zinc-900 border border-zinc-800 hover:bg-zinc-300 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 focus:ring-offset-black">Register</a>
                             </div>
                         <?php endif ?>
@@ -100,17 +100,17 @@
                 </div>
             </div>
             <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors">Your Profile</a>
-                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors">Notifications</a>
-                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors">Settings</a>
+                <a href="#" class="block rounded-md px-3 py-2 text-base font-semibold text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors">Your Profile</a>
+                <a href="#" class="block rounded-md px-3 py-2 text-base font-semibold text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors">Notifications</a>
+                <a href="#" class="block rounded-md px-3 py-2 text-base font-semibold text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors">Settings</a>
                 <form action="/logout" method="POST">
                     <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit" class="block w-full text-left rounded-md px-3 py-2 text-base font-medium text-zinc-400 cursor-pointer hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors">Sign Out</button>
+                    <button type="submit" class="block w-full text-left rounded-md px-3 py-2 text-base font-semibold text-zinc-400 cursor-pointer hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors">Sign Out</button>
                 </form>
             </div>
         <?php else : ?>
             <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-                <a href="/login" class="block rounded-md border border-zinc-800 px-3 py-2 text-base font-medium text-zinc-100 hover:bg-zinc-900/70 transition-colors mt-2">Login</a>
+                <a href="/login" class="block rounded-md border border-zinc-800 px-3 py-2 text-base font-semibold text-zinc-100 hover:bg-zinc-900/70 transition-colors mt-2">Login</a>
                 <a href="/register" class="block rounded-md bg-zinc-100 px-3 py-2 text-base font-semibold text-zinc-900 border border-zinc-800 hover:bg-zinc-300 transition-colors mt-2">Register</a>
             </div>
         <?php endif ?>
