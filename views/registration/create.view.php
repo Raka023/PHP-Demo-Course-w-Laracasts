@@ -7,7 +7,7 @@
     <div class="w-full max-w-2xl mx-auto px-4 py-12">
         <div class="rounded-lg border border-zinc-800 bg-zinc-950 p-8 shadow-lg">
             <h2 class="text-2xl font-semibold text-zinc-100 mb-12 text-center">Create an Account</h2>
-            <form action="/register" method="POST" class="space-y-6">
+            <form action="/register" method="POST" class="space-y-6" novalidate>
                 <div>
                     <!-- <label for="name" class="block text-sm font-medium text-zinc-200 mb-2">Name</label> -->
                     <input id="name" name="name" type="text" placeholder="Name" value="<?= $_POST['name'] ?? '' ?>" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-3 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500" />
@@ -19,7 +19,7 @@
                 </div>
                 <div>
                     <!-- <label for="email" class="block text-sm font-medium text-zinc-200 mb-2">Email</label> -->
-                    <input id="email" name="email" type="text" placeholder="Email" value="<?= $_POST['email'] ?? '' ?>" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-3 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500" />
+                    <input id="email" name="email" type="email" placeholder="Email" value="<?= $_POST['email'] ?? '' ?>" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-3 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500" />
                     <?php if (isset($errors['email'])) : ?>
                         <div class="rounded-md border border-red-800 bg-red-950/80 p-2 text-red-300 text-sm mt-2">
                             <?= $errors['email'] ?>

@@ -13,19 +13,19 @@ $password_confirmation = $_POST['password_confirmation'];
 
 $errors = [];
 
-if (Validator::string($name, 1, 255)) {
+if (! Validator::string($name, 1, 255)) {
     $errors['name'] = 'Please enter a name';
 }
 
-if (Validator::email($email)) {
+if (! Validator::email($email)) {
     $errors['email'] = 'Please enter a valid email address';
 }
 
-if (Validator::string($password, 8, 255)) {
+if (! Validator::string($password, 8, 255)) {
     $errors['password'] = 'Please enter a Password of at least 8 characters';
 }
 
-if (Validator::string($password_confirmation, 8, 255)) {
+if (! Validator::string($password_confirmation, 8, 255)) {
     $errors['password'] = 'Please enter a Password of at least 8 characters';
 }
 

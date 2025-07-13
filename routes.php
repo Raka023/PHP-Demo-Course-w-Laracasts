@@ -24,7 +24,7 @@ $router->get('/notes/note/edit', 'notes/edit.php')->only('auth');
 $router->patch('/notes/note/edit', 'notes/update.php')->only('auth');
 
 // To do's
-$router->get('/todos', 'controllers/todos.php')->only('auth');
+$router->get('/todos', 'todos.php')->only('auth');
 
 // Calendar
-$router->get('/calendar', 'controllers/calendar.php')->only('auth');
+$router->get('/calendar', 'calendar.php')->only('auth');
