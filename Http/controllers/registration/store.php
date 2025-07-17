@@ -58,7 +58,7 @@ $db->query("INSERT INTO users (name, email, password) VALUES (:name, :email, :pa
 ]);
 
 login([
-    'id' => $user['id'],
+    'id' => $db->query("SELECT id FROM users WHERE email = ?", [$email])->find()['id'],
     'name' => $name
 ]);
 
