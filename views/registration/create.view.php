@@ -1,7 +1,6 @@
 <?php require base_path('views/partials/head.php') ?>
 
-<?php require base_path('views/partials/nav.php')
-?>
+<?php require base_path('views/partials/nav.php') ?>
 
 <main class="bg-gradient-to-b from-black via-zinc-950 to-zinc-900 min-h-screen flex items-center justify-center">
     <div class="w-full max-w-2xl mx-auto px-4 py-12">
@@ -10,7 +9,7 @@
             <form action="/register" method="POST" class="space-y-6" novalidate>
                 <div>
                     <!-- <label for="name" class="block text-sm font-medium text-zinc-200 mb-2">Name</label> -->
-                    <input id="name" name="name" type="text" placeholder="Name" value="<?= $_POST['name'] ?? '' ?>" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-3 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500" />
+                    <input id="name" name="name" type="text" placeholder="Name" value="<?=  old('name') ?>" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-3 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500" />
                     <?php if (isset($errors['name'])) : ?>
                         <div class="rounded-md border border-red-800 bg-red-950/80 p-2 text-red-300 text-sm mt-2">
                             <?= $errors['name'] ?>
@@ -19,7 +18,7 @@
                 </div>
                 <div>
                     <!-- <label for="email" class="block text-sm font-medium text-zinc-200 mb-2">Email</label> -->
-                    <input id="email" name="email" type="email" placeholder="Email" value="<?= $_POST['email'] ?? '' ?>" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-3 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500" />
+                    <input id="email" name="email" type="email" placeholder="Email" value="<?=  old('email') ?>" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-3 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500" />
                     <?php if (isset($errors['email'])) : ?>
                         <div class="rounded-md border border-red-800 bg-red-950/80 p-2 text-red-300 text-sm mt-2">
                             <?= $errors['email'] ?>
@@ -29,11 +28,11 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
                         <!-- <label for="password" class="block text-sm font-medium text-zinc-200 mb-2">Password</label> -->
-                        <input id="password" name="password" type="password" placeholder="Password" value="<?= $_POST['password'] ?? '' ?>" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-3 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500" />
+                        <input id="password" name="password" type="password" placeholder="Password" value="<?= old('password') ?>" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-3 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500" />
                     </div>
                     <div>
                         <!-- <label for="password_confirmation" class="block text-sm font-medium text-zinc-200 mb-2">Confirm Password</label> -->
-                        <input id="password_confirmation" name="password_confirmation" type="password" placeholder="Confirm Password" value="<?= $_POST['password_confirmation'] ?? '' ?>" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-3 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500" />
+                        <input id="password_confirmation" name="password_confirmation" type="password" placeholder="Confirm Password" value="<?= old('password_confirmation') ?>" class="block w-full rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-100 p-3 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500" />
                     </div>
                 </div>
                 <?php if (isset($errors['password'])) : ?>

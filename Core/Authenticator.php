@@ -4,7 +4,7 @@ namespace Core;
 
 class Authenticator
 {
-    public function attempt($email, $password) {
+    public function attemptLogin($email, $password) {
         $user = App::resolve(Database::class)->query("SELECT * FROM users WHERE email = :email", [
             'email' => $email
         ])->find();
@@ -21,5 +21,32 @@ class Authenticator
         }
 
         return false;
+    }
+
+    public function attemptRegister($name, $email, $password) {
+        $db = App::resolve(Database::class);
+
+        $user = $db->query("SELECT * FROM users WHERE email = :email", [
+            'email' => $email
+        ])->find();
+
+        if ($user) {
+            $errors['email'] = 'An account with this email already exists';
+            return false;
+            die;
+        }
+
+        $db->query("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)", [
+            'name' => $name,
+            'email' => $email,
+            'password' => password_hash($password, PASSWORD_DEFAULT)
+        ]);
+
+        login([
+            'id' => $db->query("SELECT id FROM users WHERE email = ?", [$email])->find()['id'],
+            'name' => $name
+        ]);
+
+        return true;
     }
 }

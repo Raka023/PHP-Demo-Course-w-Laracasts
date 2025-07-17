@@ -8,15 +8,14 @@ $form = LoginForm::validate($attributes = [
     'password' => $_POST['password']
 ]);
 
-$signedIn = (new Authenticator())->attempt(
+$signedIn = (new Authenticator())->attemptLogin(
     $attributes['email'],
     $attributes['password']
 );
 
 if (! $signedIn) {
     $form->error(
-        'password',
-        'Incorrect password or email adress'
+        'password', 'Incorrect password or email adress'
     )->throw();
 }
 
