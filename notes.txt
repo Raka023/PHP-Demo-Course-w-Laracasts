@@ -1,6 +1,0 @@
-!Most of the UI Design are made by AI
-
-The web root start in public folder
-
-command to run the app using php built in server:
-php -S localhost:8888 -t public
